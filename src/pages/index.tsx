@@ -1,7 +1,26 @@
 import dynamic from 'next/dynamic'
 
 const Map = dynamic(() => import('components/Map'), { ssr: false })
+const place = {
+  id: '1',
+  name: 'Petrópolis',
+  slug: 'petropolis',
+  location: {
+    latitude: 51.505,
+    longitude: -0.09
+  }
+}
+
+const placeTwo = {
+  id: '1',
+  name: 'Reykjavik',
+  slug: 'reykjavik',
+  location: {
+    latitude: 51.505,
+    longitude: -0.09
+  }
+}
 
 export default function Home() {
-  return <Map />
+  return <Map places={[place, placeTwo]} />
 }
